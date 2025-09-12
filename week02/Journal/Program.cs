@@ -29,6 +29,12 @@ class Program
                     Console.WriteLine($"Prompt: {prompt.GetRandomPrompt()}");
                     Console.Write("Response: ");
                     string response = Console.ReadLine();
+                    Entry entry1 = new Entry();
+                    entry1._date = " ";
+                    entry1._promptText = prompt;
+                    entry1._entryText = response;
+                    Journal journal1 = new Journal();
+                    journal1.AddEntry(entry1.Display());
                     break;
 
                 case 2:
