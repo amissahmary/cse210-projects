@@ -15,19 +15,32 @@ public class Journal
     public void Display()
     {
         //code goes here
-        foreach (text in _entries)
+        foreach (Entry text in _entries)
         {
-            Console.WriteLine(text);
+            Console.WriteLine(text.Display());
         }
     }
 
     public void SaveToFile(string _filename)
     {
         //code goes here
+        using(StreamWriter outputFile = new StreamWriter(_filename))
+        {
+            foreach(Entry entry in _entries)
+            {
+                outputFile.WriteLine(entry.Display());
+            }
+        }
     }
 
-    public void LoadFRomFile(string _filename)
+    public void LoadFromFile(string _filename)
     {
         //code goes here
+        string text = File.ReadAllText(_filename);
+
+        foreach (Entry texts in _entries)
+        {
+            Console.WriteLine(texts);
+        }
     }
 }
