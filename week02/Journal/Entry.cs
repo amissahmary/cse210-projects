@@ -1,10 +1,12 @@
 using System;
+using System.IO;
+using System.Text.Json;
 
 public class Entry
 {
-    public string _date;
-    public string _promptText;
-    public string _entryText;
+    public string _date{get; set;}
+    public string _promptText{get; set;}
+    public string _entryText{get; set;}
 
     public string Display()
     {
