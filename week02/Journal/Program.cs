@@ -22,10 +22,12 @@ class Program
 
             Console.Write("What do you want to do today?");
             string input = Console.ReadLine();
-            int choice1 = int.Parse(input);
-            choice = choice1;
-            
-            
+
+             if (!int.TryParse(input, out choice))
+            {
+                Console.WriteLine("Please enter a number between 1 and 5.");
+                continue;
+            }
 
             switch(choice)
             {
