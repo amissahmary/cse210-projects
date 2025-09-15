@@ -1,3 +1,10 @@
+/*
+Exceeding requirements:
+I added a class that allows the user to create a list of scriptures they want to memorize
+Select a scripture at a time and memorize 
+And delete that scripture from the list when they are sure that they now know the scripture.
+*/
+
  using System;
 
 class Program
