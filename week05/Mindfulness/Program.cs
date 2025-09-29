@@ -8,7 +8,7 @@ class Program
 
         int choice = 0;
 
-        while(choice != 4){
+        while(choice != 5){
 
             Console.Clear();
 
@@ -16,7 +16,8 @@ class Program
             Console.WriteLine("1. Start breathing activity.");
             Console.WriteLine("2. Start reflecting activity.");
             Console.WriteLine("3. Start listing activity.");
-            Console.WriteLine("4. Quit.");
+            Console.WriteLine("4. Start gratitude activity.");
+            Console.WriteLine("5. Quit.");
 
             Console.Write("Select a choice from the menu: ");
             choice = int.Parse(Console.ReadLine());
@@ -38,6 +39,11 @@ class Program
                     break;
 
                 case 4:
+                    Gratitude gratitude = new Gratitude();
+                    gratitude.Run();
+                    break;
+
+                case 5:
                     Console.WriteLine("Goodbye!");
                     break;
 
@@ -47,7 +53,7 @@ class Program
             }
         }
 
-        if (choice != 4)
+        if (choice != 5)
             {
                 Console.WriteLine("\nPress Enter to return to the menu.");
                 Console.ReadLine();
