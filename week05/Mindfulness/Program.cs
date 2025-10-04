@@ -1,3 +1,6 @@
+// Exceeding Requirements
+// I added a new activity called Gratitude where the individual writes about the things and people they are grateful for.
+
 using System;
 
 class Program
