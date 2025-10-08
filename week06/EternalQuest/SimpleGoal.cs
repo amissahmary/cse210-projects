@@ -1,19 +1,99 @@
-using System;
+/*using System;
 
 public class SimpleGoal : Goal{
     private bool _isComplete;
 
-    public SimpleGoal(string name, string description, string points) : base(name, description, points){}
-
-    public void RecordEvent(){
-
+    public SimpleGoal(string name, string description, int points) : base(name, description, points){
+        _isComplete = false;
     }
 
-    public bool IsComplete(){
-        return true;
+    public override void RecordEvent(GoalManager manager){
+        if (!_isComplete)
+        {
+            _isComplete = true;
+            manager.AddScore(GetPoints());
+        }
     }
 
-    public string GetStringRepresentation(){
-        return "";
+    public override bool IsComplete(){
+        return _isComplete;
+    }
+
+    public override string GetDetailsString()
+    {
+        return $"[{(_isComplete ? "X" : " ")}] {GetName()} ({GetDescription()})";
+    }
+
+    public override string GetStringRepresentation(){
+        return $"SimpleGoal:{GetName()},{GetDescription()},{GetPoints()},{_isComplete}";
+    }
+}
+
+using System;
+
+public class SimpleGoal : Goal
+{
+    private bool _isComplete;
+
+    public SimpleGoal(string name, string description, int points)
+        : base(name, description, points)
+    {
+        _isComplete = false;
+    }
+
+    public override void RecordEvent(GoalManager manager)
+    {
+        if (!_isComplete)
+        {
+            _isComplete = true;
+            manager.AddScore(GetPoints());
+        }
+    }
+
+    public override bool IsComplete() => _isComplete;
+
+    public override string GetDetailsString()
+    {
+        return $"[{(_isComplete ? "X" : " ")}] {GetName()} ({GetDescription()})";
+    }
+
+    public override string GetStringRepresentation()
+    {
+        return $"SimpleGoal:{GetName()},{GetDescription()},{GetPoints()},{_isComplete}";
+    }
+}
+*/
+
+using System;
+
+public class SimpleGoal : Goal
+{
+    private bool _isComplete;
+
+    public SimpleGoal(string name, string description, int points, bool isComplete = false)
+        : base(name, description, points)
+    {
+        _isComplete = isComplete;
+    }
+
+    public override void RecordEvent(GoalManager manager)
+    {
+        if (!_isComplete)
+        {
+            _isComplete = true;
+            manager.AddScore(GetPoints());
+        }
+    }
+
+    public override bool IsComplete() => _isComplete;
+
+    public override string GetDetailsString()
+    {
+        return $"[{(_isComplete ? "X" : " ")}] {GetName()} ({GetDescription()})";
+    }
+
+    public override string GetStringRepresentation()
+    {
+        return $"SimpleGoal:{GetName()},{GetDescription()},{GetPoints()},{_isComplete}";
     }
 }

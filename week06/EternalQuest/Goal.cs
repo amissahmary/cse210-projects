@@ -1,29 +1,85 @@
-using System;
+/*using System;
 
-public class Goal{
+public abstract class Goal{
     private string _shortName;
     private string _description;
-    private string _points;
+    private int _points;
 
-    public Goal(string name, string description, string points){
+    public Goal(string name, string description, int points){
         _shortName = name;
         _description = description;
         _points = points;
     }
 
-    public void RecordEvent(){
-
+    public string GetName(){
+        return _shortName;
     }
 
-    public bool IsComplete(){
-        return true;
+    public string GetDescription(){
+        return _description;
     }
 
-    public string GetDetailsString(){
-        return "";
+    public int GetPoints(){
+        return _points;
     }
 
-    public string GetStringRepresentation(){
-        return "";
-    }
+    public abstract void RecordEvent(GoalManager manager);
+
+    public abstract bool IsComplete();
+
+    public abstract string GetDetailsString();
+
+    public abstract string GetStringRepresentation();
 }
+
+using System;
+
+public abstract class Goal
+{
+    private string _shortName;
+    private string _description;
+    private int _points;
+
+    public Goal(string name, string description, int points)
+    {
+        _shortName = name;
+        _description = description;
+        _points = points;
+    }
+
+    public string GetName() => _shortName;
+    public string GetDescription() => _description;
+    public int GetPoints() => _points;
+
+    public abstract void RecordEvent(GoalManager manager);
+    public abstract bool IsComplete();
+    public abstract string GetDetailsString();
+    public abstract string GetStringRepresentation();
+}*/
+
+
+using System;
+
+public abstract class Goal
+{
+    private string _shortName;
+    private string _description;
+    private int _points;
+
+    public Goal(string name, string description, int points)
+    {
+        _shortName = name;
+        _description = description;
+        _points = points;
+    }
+
+    public string GetName() => _shortName;
+    public string GetDescription() => _description;
+    public int GetPoints() => _points;
+
+    public abstract void RecordEvent(GoalManager manager);
+    public abstract bool IsComplete();
+    public abstract string GetDetailsString();
+    public abstract string GetStringRepresentation();
+}
+

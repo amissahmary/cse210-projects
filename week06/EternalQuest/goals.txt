@@ -1,0 +1,2 @@
+3000
+CheckListGoal:Go to the temple,3 times,1000,10,100000,3
