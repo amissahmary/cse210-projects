@@ -1,18 +1,43 @@
 using System;
 
-public class Activities{
+public class Activity
+{
     private string _date;
-    private string _length;
+    private int _length; 
 
-    public int Distance(){
+    public Activity(string date, int length)
+    {
+        _date = date;
+        _length = length;
+    }
+
+    public string GetDate()
+    {
+        return _date;
+    }
+
+    public int GetLength()
+    {
+        return _length;
+    }
+
+    public virtual double GetDistance()
+    {
         return 0;
     }
 
-    public double Speed(){
+    public virtual double GetSpeed()
+    {
         return 0;
     }
 
-    public double Pace(){
+    public virtual double GetPace()
+    {
         return 0;
+    }
+
+    public virtual string GetSummary()
+    {
+        return $"{_date} Activity ({_length} min)";
     }
 }
